@@ -1,0 +1,65 @@
+//This code was modified from Generative Gestaltung, ISBN: 978-3-87439-759-9
+// from exercise P_2_3_4_01.pde
+// for school projects
+//by University of San Marino. No commercial use.
+
+
+// http://www.generative-gestaltung.de
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+
+ 
+
+
+float x = 0, y = 0;
+float stepSize = 15.0; //5
+float moduleSize = 100; // prima era a 25 perciò cambia la dimensione della forma
+
+//PShape lineModule; è stato disattivato in quanto ho definito una forma nel draw
+
+void setup() {
+
+  size(800,800);
+  background(255);
+  smooth();
+  x = mouseX;
+  y = mouseY;
+  cursor(CROSS);
+ // lineModule = loadShape("01.svg"); è stato disattivato in quanto ho definito una forma nel draw
+
+
+}
+
+void draw() {
+  if (mousePressed) {
+    float d = dist(x,y, mouseX,mouseY);
+
+    if (d > stepSize) {
+      float angle = atan2(mouseY-y, mouseX-x); 
+
+      pushMatrix();
+      translate(mouseX, mouseY);
+      rotate(angle+PI);
+      fill (random (250), random (100) , random (150), 100); // volevo che ogni cerchio cambiasse colore e trasparenza
+      ellipse (50, 50, d, moduleSize); // shape(lineModule, 0, 0, d, moduleSize); è stato sostituito dalla forma ellisse
+      popMatrix();
+
+      x = x + cos(angle) * stepSize;
+      y = y + sin(angle) * stepSize;
+    }
+  }
+}
+
+void mousePressed() {
+  x = mouseX;
+  y = mouseY;
+}
