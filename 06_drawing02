@@ -1,0 +1,76 @@
+
+//This code was modified from Generative Gestaltung, ISBN: 978-3-87439-759-9
+// from exercise P_2_3_2_01.pde
+// for school projects
+//by University of San Marino. No commercial use.
+
+
+// http://www.generative-gestaltung.de
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+ 
+
+
+int drawMode = 50;
+
+color col = color(random(255),random(255),random(255),random(0)); //ogni linea deve cambiare colore
+float x = 0, y = 0;
+float stepSize = 3.0; //misura tra un movimento e l'altro?
+float lineLength = 100; //lunghezza della linea
+
+
+void setup() {
+  
+  size(800, 800);
+  background(255);
+  smooth();
+  x = mouseX;
+  y = mouseY;
+  cursor(CENTER); 
+}
+
+
+void draw() {
+  if (mousePressed) {
+    float d = dist(x,y, mouseX,mouseY); //variabile distanza tra una linea e l'altra
+
+    if (d > stepSize) {
+      float angle = atan2(mouseY-y, mouseX-x); //tangente??
+
+      pushMatrix();
+      translate(x,y); //trasla secondo le variabilix e y
+      rotate(angle); // ruota sull'angolo
+      stroke (col); // lo spessore della linea dipende dalla variabile colore
+      
+      if (frameCount % 2 == 0) stroke(random (500));
+      line(0,0,0,lineLength*random(0.95,1.0)*d/20);
+      popMatrix();
+
+      if (drawMode == 10) {
+        x = x + cos(angle) * random (stepSize);
+        y = y + sin(angle) * random (stepSize); 
+      }  //  
+      
+      //se una linea disegnata corrisponde al valore 10 la x e y dipendono dalla somma di loro con il coseno e seno 
+      //moltiplicato per un valore a random della variabile stepsize
+      
+      else {
+        x  = mouseX;
+        y  = mouseY; 
+      } // altrimenti la x e la y corrispondono al valore del mouse sull'asse x e y
+    }
+  }
+}
+
+void mousePressed() {
+  x = mouseX;
+  y = mouseY;
+  col = color(random(255),random(255),random(255),random(100));
+}
