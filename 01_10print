@@ -1,0 +1,41 @@
+//This code was modified from 10 print by Casey Reas, for school projects
+//by University of San Marino. No commercial use.
+
+
+//volevo creare partendo dal codice 10 print una sorta di scacchiera. 
+//Il colore di ogni tassello cambia a random
+
+
+
+ int w = 26; //variabile larghezza rettangolo
+ int h = 35; //variabile lunghezza rettangolo
+ int index = 0; 
+    
+    
+    
+    void setup() {
+      size(640, 384);
+      background(150);
+      strokeWeight(3);
+      stroke(224);
+      smooth();
+}
+    void draw() {
+      int x1 = w*index;
+      int x2 = x1 + w;
+      int y1 = h*10; 
+      int y2 = h*11; 
+      if (random(2) < 1) {
+       fill (random(250), random (0),random (50)); //riempimento random rgb
+        rect(x2, y1, x1, y2); 
+      } else {
+        rect (x1, y1, x2, y2);
+}
+      
+      index++;
+      if (index == width/w) {
+        PImage p = get(0, h, width, h*10);
+        background (150);
+        set(0, 0, p);
+        index = 0;
+} }
