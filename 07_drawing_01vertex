@@ -1,0 +1,17 @@
+void setup(){
+size (600,600);
+}
+
+
+void draw(){
+background(250);
+noStroke();
+fill( random (150),random (250),random (100),100);
+beginShape();
+vertex(mouseX, mouseY);// uno dei 2 vertici si mouve con il mouse
+vertex(150, 300);
+vertex(mouseY, mouseX);// uno dei 2 vertici si muove con il mouse
+vertex(500, 300);
+endShape(CLOSE);
+
+}
