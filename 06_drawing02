@@ -1,8 +1,7 @@
-
 //This code was modified from Generative Gestaltung, ISBN: 978-3-87439-759-9
 // from exercise P_2_3_2_01.pde
 // for school projects
-//by University of San Marino. No commercial use.
+//by Elena La Maida
 
 
 // http://www.generative-gestaltung.de
@@ -20,10 +19,10 @@
 
 int drawMode = 50;
 
-color col = color(random(255),random(255),random(255),random(0)); //ogni linea deve cambiare colore
+color col = color(random(255),random(255),random(255),random(0)); //every lines changes color
 float x = 0, y = 0;
-float stepSize = 3.0; //misura tra un movimento e l'altro?
-float lineLength = 100; //lunghezza della linea
+float stepSize = 3.0; //is the extend between one movement and the other?
+float lineLength = 100; //lenght of the line
 
 
 void setup() {
@@ -39,15 +38,15 @@ void setup() {
 
 void draw() {
   if (mousePressed) {
-    float d = dist(x,y, mouseX,mouseY); //variabile distanza tra una linea e l'altra
+    float d = dist(x,y, mouseX,mouseY); // variable distance between a line and the other
 
     if (d > stepSize) {
-      float angle = atan2(mouseY-y, mouseX-x); //tangente??
+      float angle = atan2(mouseY-y, mouseX-x); //tangent??
 
       pushMatrix();
-      translate(x,y); //trasla secondo le variabilix e y
-      rotate(angle); // ruota sull'angolo
-      stroke (col); // lo spessore della linea dipende dalla variabile colore
+      translate(x,y); //moves according to the variablesx and y
+      rotate(angle); // rotate on the angle
+      stroke (col); // the thickness of the line depends on the variable color
       
       if (frameCount % 2 == 0) stroke(random (500));
       line(0,0,0,lineLength*random(0.95,1.0)*d/20);
@@ -56,15 +55,15 @@ void draw() {
       if (drawMode == 10) {
         x = x + cos(angle) * random (stepSize);
         y = y + sin(angle) * random (stepSize); 
-      }  //  
+      }    
       
-      //se una linea disegnata corrisponde al valore 10 la x e y dipendono dalla somma di loro con il coseno e seno 
-      //moltiplicato per un valore a random della variabile stepsize
-      
+  // if a line drawn corresponds to the value of 10 x and y depend on the sum of them with the cosine and sine 
+  // multiplied by a value of a random variable stepsize
+
       else {
         x  = mouseX;
         y  = mouseY; 
-      } // altrimenti la x e la y corrispondono al valore del mouse sull'asse x e y
+      } // Otherwise the x and y correspond to the value of the mouse x and y axis
     }
   }
 }
