@@ -1,7 +1,7 @@
 //This code was modified from Generative Gestaltung, ISBN: 978-3-87439-759-9
 // from exercise P_2_2_2_02.pde
 // for school projects
-//by University of San Marino. No commercial use.
+//by Elena La Maida
 
 
 // http://www.generative-gestaltung.de
@@ -26,13 +26,13 @@ float posX, posY;
 float posXcross, posYcross;
 
 int direction = SOUTH;
-float angleCount = 2;   // era a 7, abbassando il valore il reticolo sembra essere formato da rettangoli
+float angleCount = 2;   //it was 7, lowering the value of the lattice seems to be formed by rectangles
 float angle = getRandomAngle(direction);
-float stepSize = 10; //prima era a 3, aumentando il valore la trama diventa più fitta
+float stepSize = 10; //before it was 3, increasing the value of the plot becomes more dense
 int minLength = 10;
 
 // width and brightness of the stroke depend on line length
-int dWeight = 80; // era a 50, le linee diventano più sottili e il reticolo sembra più fitto
+int dWeight = 80; // it was 50, the lines become thinner and more dense lattice seems
 int dStroke = 4; 
 int drawMode = 1;
 
@@ -77,8 +77,8 @@ void draw(){
       direction = EAST;
       reachedBorder = true;
     }
-//modificando le direzioni
-//esempio: inverto nord con sud o est con ovest il reticolo scompare e appaiono solo un paio di linee, perchè?
+// changing directions 
+// example: I invert the north south east or west with the lattice disappears and you only see a couple of lines, why?
 
 
 
@@ -103,9 +103,9 @@ void draw(){
 
 float getRandomAngle(int theDirection) {
   float a = (floor(random(-angleCount, angleCount)) + 2) * 90.0/angleCount; // prima il random + 0.5 rendevo l'intero reticolo 
-  //leggermente inclinato
-  //ora inserendo il valore 2 il reticolo è perfettamente perpendicolare al centro (inserendo il valore 3 il reticolo scompare)
-
+  // slightly inclined 
+   // now entering the value 2, the lattice is perfectly perpendicular to the center (by entering the value 3, the grid disappears)
+   
   if (theDirection == NORTH) return (a - 90);
   if (theDirection == EAST) return (a);
   if (theDirection == SOUTH) return (a + 90);
