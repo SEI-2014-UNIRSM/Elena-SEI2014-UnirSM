@@ -1,7 +1,7 @@
 //This code was modified from Generative Gestaltung, ISBN: 978-3-87439-759-9
 // from exercise P_1_0_01.pde
 // for school projects
-//by University of San Marino. No commercial use.
+//by Elena La Maida
 
 
 // http://www.generative-gestaltung.de
@@ -17,8 +17,8 @@
 
 
 
-//volevo creare una scacchiera formata da 5 rettangoli che cambiassero colore 
-// a seconda del movimento del mouse
+/ / I wanted to create a chess board consists of 5 rectangles that would change color 
+/ / Depending on the movement of the mouse
 
 int stepX;
 int stepY;
@@ -32,10 +32,10 @@ void setup() {
 
 void draw() {
 
-  colorMode(HSB, 360, 100, 100); //modalità colore HSB
+  colorMode(HSB, 360, 100, 100); //color mode HSB
  rectMode(CENTER); 
   noStroke();
-  background(mouseY/2, mouseX/2, random (HSB)); // lo sfondo dipende dal movimento dello mouse sull'asse x e y e il valore random hsb
+  background(mouseY/2, mouseX/2, random (HSB)); // the background depends on the movement of the mouse on the axis x and y and the random value hsb
   
 
   stepX = mouseX+2;
@@ -51,7 +51,7 @@ void draw() {
   rect(200,520,mouseX+1, mouseX+1);
   rect(520,520,mouseX+1, mouseX+1);
   
-  //disegno di 5 rettangoli in base alla posizione x e y il movimento del mouse sull'asse x e y +1
+  / / draw 5 rectangles based on the x and y position of the mouse movement on the axis x and y +1
   }
 }
 
