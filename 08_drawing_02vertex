@@ -1,8 +1,10 @@
-//sulla base della prima prova (esercizio 7) ho provato ad inserire 2 variabili
-//per gestire il colore della forma che si creava dall'unione dei vertici
-// spostando il background nel setup (prima era nel draw) vado a disegnare ogni
-//volta sulla forma precedente
+//Exercise for school project
+//by Elena La Maida
 
+// based on the precedent exercise  (exercise 7) I tried to insert two variables 
+// to manage the color of the shape that was created from the union of the vertices 
+// Move the background in the setup (the first was in the draw) I'm going to draw any 
+// turn on previous form
 
 
 void setup(){
