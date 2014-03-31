@@ -1,14 +1,13 @@
 //This code was modified from 10 print by Casey Reas, for school projects
-//by University of San Marino. No commercial use.
+//by Elena La Maida
 
 
-//volevo creare partendo dal codice 10 print una sorta di scacchiera. 
-//Il colore di ogni tassello cambia a random
+//I wanted to create, starting from code 10 print a sort of chessboard. 
+//The color of each piece varies randomly
 
 
-
- int w = 26; //variabile larghezza rettangolo
- int h = 35; //variabile lunghezza rettangolo
+ int w = 26; //variable width rectangle
+ int h = 35; //variable width rectangle
  int index = 0; 
     
     
@@ -26,7 +25,7 @@
       int y1 = h*10; 
       int y2 = h*11; 
       if (random(2) < 1) {
-       fill (random(250), random (0),random (50)); //riempimento random rgb
+       fill (random(250), random (0),random (50)); //filling random rgb
         rect(x2, y1, x1, y2); 
       } else {
         rect (x1, y1, x2, y2);
