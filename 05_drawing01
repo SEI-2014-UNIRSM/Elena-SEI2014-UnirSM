@@ -1,7 +1,7 @@
 //This code was modified from Generative Gestaltung, ISBN: 978-3-87439-759-9
 // from exercise P_2_3_4_01.pde
 // for school projects
-//by University of San Marino. No commercial use.
+//by Elena La Maida
 
 
 // http://www.generative-gestaltung.de
@@ -22,9 +22,9 @@
 
 float x = 0, y = 0;
 float stepSize = 15.0; //5
-float moduleSize = 100; // prima era a 25 perciò cambia la dimensione della forma
+float moduleSize = 100; / / First it was 25, so changes the size of the form
 
-//PShape lineModule; è stato disattivato in quanto ho definito una forma nel draw
+/ / PShape lineModule; has been disabled because I defined a shape in the draw
 
 void setup() {
 
@@ -34,7 +34,7 @@ void setup() {
   x = mouseX;
   y = mouseY;
   cursor(CROSS);
- // lineModule = loadShape("01.svg"); è stato disattivato in quanto ho definito una forma nel draw
+ // lineModule = loadShape("01.svg"); has been turned off because I've defined a form in draw
 
 
 }
@@ -49,8 +49,8 @@ void draw() {
       pushMatrix();
       translate(mouseX, mouseY);
       rotate(angle+PI);
-      fill (random (250), random (100) , random (150), 100); // volevo che ogni cerchio cambiasse colore e trasparenza
-      ellipse (50, 50, d, moduleSize); // shape(lineModule, 0, 0, d, moduleSize); è stato sostituito dalla forma ellisse
+      fill (random (250), random (100) , random (150), 100); // I wanted each circle changed color and transparency
+      ellipse (50, 50, d, moduleSize); // shape(lineModule, 0, 0, d, moduleSize); has been replaced by ellipse shape
       popMatrix();
 
       x = x + cos(angle) * stepSize;
