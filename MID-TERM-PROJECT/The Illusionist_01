@@ -1,0 +1,50 @@
+
+// Drawing tool for movie poster and opening credits
+// © Elena La Maida for the course SEI2014 @ UnirSM  
+// Didactic purpose, MIT License, March 2014, San Marino
+
+
+
+float x = (width/2);
+float y = (height/2);
+ 
+float lasty;
+float lastx;
+float lineWeight;
+ 
+void setup () {
+  frameRate(1000);
+  smooth();
+  background(255);
+  size(1280, 720);
+}
+ 
+ 
+void draw () {
+}
+
+void mouseDragged() {
+ 
+ 
+  lastx = x;
+  lasty = y;
+ 
+  x = mouseX;
+  y = mouseY;
+ 
+  lineWeight = dist(lastx, lasty, x, y);
+ 
+  stroke(4*lineWeight);
+  strokeWeight((5/lineWeight)); 
+ 
+  line(lastx, lasty,x,y);
+ 
+  println(lineWeight);
+}
+
+void keyPressed() {
+  if (key == DELETE || key == BACKSPACE) {
+    background(255);
+
+  }
+    }
