@@ -14,11 +14,11 @@ void setup() {
   size(1280, 720);
   noStroke();
   fill(255, 150); 
-  background(51);
+  background(0);
  }
 
 void draw() {
- //background(51); 
+ //background(0); 
   noCursor();
   // Cycle through the array, using a different entry on each frame. 
  
@@ -57,7 +57,7 @@ void mouseDragged() {
   
   void keyPressed() {
   if (key == DELETE || key == BACKSPACE) {
-    background(51);
+    background(0);
 
   }
     }
