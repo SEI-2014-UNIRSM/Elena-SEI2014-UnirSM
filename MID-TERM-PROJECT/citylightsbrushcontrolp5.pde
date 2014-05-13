@@ -1,6 +1,6 @@
 // Drawing tool for movie poster and opening credits
 // © Elena La Maida for the course SEI2014 @ UnirSM  
-
+//with control panel p5
 
 import controlP5.*;
 
